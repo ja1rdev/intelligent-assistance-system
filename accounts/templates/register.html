@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+
+<div class="register-container">
+    <a href="{% url 'users' %}"><h2>User Registration</h2></a>
+    <form id="register-form" method="POST" action="/register/">
+        {% csrf_token %}
+        <input type="text" id="username" name="username" placeholder="Username" required>
+        <input type="number" id="identification_number" name="identification_number" placeholder="Identification number"
+            required>
+        <div class="select-container">
+            <select name="user_type" id="user_type" required>
+                <option value="" disabled selected>Select user type</option>
+                <option value="administrative">Administrative</option>
+                <option value="student">Student</option>
+            </select>
+        </div>
+        <div id="camera-container">
+            <video id="video" width="100%" height="auto" autoplay></video>
+            <canvas id="canvas" width="300" height="200"></canvas>
+        </div>
+        <button type="button" id="capture-button">Capture face</button>
+        <button type="submit">Save</button>
+    </form>
+    <div id="message"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<script src="{% static 'js/register.js' %}"></script>
+
+{% endblock %}

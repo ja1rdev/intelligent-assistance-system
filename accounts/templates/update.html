@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+
+<div class="update-container">
+    <h2>Update User</h2>
+    <form id="update-form" method="POST" action="{% url 'update' user_img.pk %}">
+        {% csrf_token %}
+        <input type="text" id="username" name="username" placeholder="Username" value="{{ user_img.user.username }}" required>
+        <input type="number" id="identification_number" name="identification_number" placeholder="Identification number"
+            value="{{ user_img.identification_number }}" required>
+        <div class="select-container">
+            <select name="user_type" id="user_type" required>
+                <option value="" disabled>Select user type</option>
+                <option value="administrative" {% if user_img.user_type == 'administrative' %}selected{% endif %}>Administrative</option>
+                <option value="student" {% if user_img.user_type == 'student' %}selected{% endif %}>Student</option>
+            </select>
+        </div>
+        <div id="camera-container">
+            <video id="video" width="100%" height="auto" autoplay></video>
+            <canvas id="canvas" width="300" height="200"></canvas>
+        </div>
+        <button type="button" id="capture-button">Capture face</button>
+        <button type="submit">Save</button>
+    </form>
+    <div id="message"></div>
+</div>
+
+<link rel="stylesheet" href="{% static 'css/update.css' %}">
+<script src="{% static 'js/update.js' %}"></script>
+
+{% endblock %}
