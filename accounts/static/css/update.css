@@ -26,7 +26,7 @@ body {
 
 .update-container {
     max-width: 400px;
-    margin: 50px auto 50px auto;
+    margin: 30px auto 30px auto;
     padding: var(--container-padding);
     background-color: var(--container-bg);
     border-radius: var(--border-radius);
