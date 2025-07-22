@@ -1,0 +1,196 @@
+:root {
+    --background-color: #f4f7fa;
+    --container-bg: #fff;
+    --text-color: #333;
+    --text-secondary: #555;
+    --border-color: #ddd;
+    --primary-color: #0056b3;
+    --danger-color: #ff0000;
+    --danger-hover: #b30000;
+    --success-color: #28a745;
+    --success-hover: #1e7430;
+    --border-radius: 4px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --standard-padding: 9px;
+    --container-padding: 30px;
+    --transition-speed: 0.3s;
+}
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.user-container {
+    background-color: var(--container-bg);
+    padding: var(--container-padding);
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-container h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.table-users {
+    background: var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.table-header th {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.table-users th {
+    vertical-align: middle;
+    border: 1px solid var(--background-color);
+    padding: 20px 12px;
+}
+
+.table-users td {
+    vertical-align: middle;
+    border: 1px solid var(--background-color);
+    padding: 10px 12px;
+}
+
+.table-users tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.table-users tr:hover {
+    background: #eaf1fa;
+    transition: background var(--transition-speed);
+}
+
+.user-photo {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    background: #f8f9fa;
+}
+
+.text-muted {
+    color: var(--text-secondary) !important;
+    font-style: italic;
+}
+
+.actions-group {
+    text-align: right;
+}
+
+.table-users td[colspan] {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.action-button {
+    padding: 8px 12px;
+    margin: 0 5px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform var(--transition-speed);
+    font-size: inherit;
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: inherit;
+    display: inline-block;
+}
+
+
+.action-button:hover {
+    transform: translateY(-2px);
+}
+
+.action-button:active {
+    transform: translateY(1px);
+}
+
+.user-delete {
+    display: inline;
+}
+
+.update-button {
+    width: 100%;
+    padding: var(--standard-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    font-size: 16px;
+    color: white;
+    margin-bottom: 8px;
+    background-color: var(--success-color);
+}
+
+.update-button:hover {
+    background-color: var(--success-hover);
+    transform: translateY(-2px);
+}
+
+.update-button:active {
+    transform: translateY(1px);
+}
+
+.delete-button {
+    width: 100%;
+    padding: var(--standard-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+    background-color: var(--danger-color);
+}
+
+.delete-button:hover {
+    background-color: var(--danger-hover);
+    transform: translateY(-2px);
+}
+
+.delete-button:active {
+    transform: translateY(1px);
+}
+
+.delete-button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+    .user-container h2 {
+        font-size: 22px;
+    }
+
+    .action-button {
+        padding: 10px;
+    }
+}

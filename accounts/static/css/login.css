@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #28a745;
+    --primary-hover: #1e7430;
+    --danger-color: #ff0000;
+    --danger-hover: #b30000;
+    --background-color: #f4f7fa;
+    --container-bg: #fff;
+    --text-color: #333;
+    --text-secondary: #555;
+    --border-radius: 4px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --standard-padding: 12px;
+    --container-padding: 30px;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 30px auto 30px auto;
+    padding: var(--container-padding);
+    background-color: var(--container-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+#camera-container {
+    margin-bottom: 20px;
+}
+
+#video {
+    border-radius: var(--border-radius);
+    width: 100%;
+    height: auto;
+}
+
+canvas {
+    display: none;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    width: 100%;
+    padding: var(--standard-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    font-size: 16px;
+    color: white;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#entry-button,
+button[type="submit"] {
+    background-color: var(--primary-color);
+}
+
+#entry-button:hover,
+button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+#exit-button,
+button[type="button"] {
+    background-color: var(--danger-color);
+}
+
+#exit-button:hover,
+button[type="button"]:hover {
+    background-color: var(--danger-hover);
+}
+
+#message {
+    margin-top: 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    min-height: 1.3em;
+}
+
+@media (max-width: 640px) {
+    .login-container {
+        padding: 20px;
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    button {
+        padding: 10px;
+    }
+}
