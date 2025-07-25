@@ -55,8 +55,8 @@ function detectFace() {
     const context = canvas.getContext('2d');
 
     // Handle different aspect ratios, especially for mobile
-    const videoWidth = video.videoWidth;
-    const videoHeight = video.videoHeight;
+    const videoWidth = video.naturalWidth;
+    const videoHeight = video.naturalHeight;
     const canvasAspectRatio = canvas.width / canvas.height;
     const videoAspectRatio = videoWidth / videoHeight;
 
@@ -140,7 +140,11 @@ async function recordAttendance(type) {
             if (data.redirect) {
                 window.location.href = data.redirect;
             }
-            window.location.reload();
+            setTimeout(() => {
+                recognizedUsername = null;
+                userInfo.style.display = 'none';
+                startFaceDetection();
+            }, 3000);
         } else {
             updateMessage(data.message || 'Failed to record attendance.', 'error');
         }
@@ -150,24 +154,9 @@ async function recordAttendance(type) {
     }
 }
 
-// Initialize camera access
-async function initializeCamera() {
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        video.srcObject = stream;
-        video.onloadedmetadata = () => {
-            video.play();
-            startFaceDetection();
-        };
-    } catch (error) {
-        console.error('Error accessing camera:', error);
-        updateMessage('Error accessing camera. Please check permissions.', 'error');
-    }
-}
-
 // Attach event listeners and start detection
 document.addEventListener('DOMContentLoaded', () => {
     entryButton.addEventListener('click', () => recordAttendance('entry'));
     exitButton.addEventListener('click', () => recordAttendance('exit'));
-    initializeCamera();
+    startFaceDetection();
 });

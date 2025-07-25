@@ -6,7 +6,7 @@
     <a href="{% url 'signin' %}"><h2>Intelligent Assistance System</h2></a>
     <div id="message" class="alert"></div>
     <div id="camera-container">
-        <video id="video" width="100%" height="auto" autoplay></video>
+        <img id="video" width="100%" height="auto" src="{% url 'video' %}" alt="Video stream with face detection">
         <canvas id="canvas" width="300" height="200"></canvas>
     </div>
 

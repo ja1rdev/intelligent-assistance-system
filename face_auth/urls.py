@@ -32,6 +32,7 @@ urlpatterns = [
     path('user/update/<int:pk>/', views.update, name='update'),
     path('signup/', views.signup, name='signup'),
     path('main/', views.main, name='main'),
+    path('video/', views.video, name='video'),
     path('logout/', views.signout, name='logout'),
     path('signin/', views.signin, name='signin'),
 ]
