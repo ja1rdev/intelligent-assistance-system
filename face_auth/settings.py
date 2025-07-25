@@ -142,7 +142,3 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
-
-ALLOWED_HOSTS = ['localhost', 'web-production-7cb2f.up.railway.app']
-
-CSRF_TRUSTED_ORIGINS = ['http://*','https://web-production-7cb2f.up.railway.app']
