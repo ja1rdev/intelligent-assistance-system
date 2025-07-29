@@ -111,7 +111,7 @@ def signup(request):
         })
 
 
-def login(request):
+def face(request):
     # Get the data sent from the form
     if request.method == 'POST':
         face_image_data = request.POST.get('face_image')
@@ -184,13 +184,13 @@ def login(request):
             'username': identified_user.username
         })
 
-    return render(request, 'login.html')
+    return render(request, 'face.html')
 
 
-def signin(request):
+def login(request):
     # Display the login form to the user
     if request.method == 'GET':
-        return render(request, 'signin.html', {
+        return render(request, 'login.html', {
             'form': AuthenticationForm
         })
     else:
@@ -345,4 +345,4 @@ def video(request):
 def signout(request):
     # Log out the user
     logout(request)
-    return redirect('login')
+    return redirect('face')

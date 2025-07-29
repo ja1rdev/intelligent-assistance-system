@@ -88,7 +88,7 @@ async function sendImageForRecognition() {
     const formData = new FormData();
     formData.append("face_image", capturedImage);
     try {
-        const response = await fetch('/login/', {
+        const response = await fetch('/face/', {
             method: 'POST',
             body: formData,
             headers: {
@@ -127,7 +127,7 @@ async function recordAttendance(type) {
     formData.append("face_image", capturedImage);
     formData.append("attendance_type", type);
     try {
-        const response = await fetch('/login/', {
+        const response = await fetch('/face/', {
             method: 'POST',
             body: formData,
             headers: {

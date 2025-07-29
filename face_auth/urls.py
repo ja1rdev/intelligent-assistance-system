@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
-    path('', views.login, name='login'),
+    path('', views.face, name='face'),
     path('users/', views.users, name='users'),
     path('user/delete/<int:pk>/', views.delete, name='delete'),
     path('attendance/remove/<int:pk>/', views.remove, name='remove'),
@@ -34,5 +34,5 @@ urlpatterns = [
     path('main/', views.main, name='main'),
     path('video/', views.video, name='video'),
     path('logout/', views.signout, name='logout'),
-    path('signin/', views.signin, name='signin'),
+    path('face/', views.face, name='face'),
 ]

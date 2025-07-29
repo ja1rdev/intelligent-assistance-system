@@ -23,7 +23,7 @@ body {
     color: var(--text-color);
 }
 
-.login-container {
+.face-container {
     max-width: 400px;
     margin: 30px auto 30px auto;
     padding: var(--container-padding);
@@ -33,7 +33,7 @@ body {
     text-align: center;
 }
 
-.login-container h2 {
+.face-container h2 {
     margin-bottom: 25px;
     font-size: 26px;
     font-weight: 600;
@@ -110,7 +110,7 @@ button[type="button"]:hover {
 }
 
 @media (max-width: 640px) {
-    .login-container {
+    .face-container {
         padding: 20px;
         width: 90%;
         margin: 30px auto;
