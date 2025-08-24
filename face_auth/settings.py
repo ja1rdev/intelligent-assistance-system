@@ -30,8 +30,11 @@ SECRET_KEY = 'django-insecure--l(x=_rsgm&d=-xf)*qp1+dv-@4b19&$ibg)7%hn=&g^832&h=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # or ['msgstr-operate-provider-set.trycloudflare.com']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://msgstr-operate-provider-set.trycloudflare.com",
+]
 
 # Application definition
 
@@ -127,7 +130,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'accounts/static',
 ]
 
-LOGIN_URL = '/signin'
+LOGIN_URL = '/login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

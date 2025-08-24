@@ -14,6 +14,17 @@ let recognizedUsername = null;
 let lastDetectionAttempt = 0;
 const DETECTION_INTERVAL = 3000;
 
+// Access the camera and start the video stream
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+        video.srcObject = stream;
+        message.innerText = 'Camera enabled successfully.';
+    })
+    .catch(error => {
+        console.error('Error accessing camera:', error);
+        message.innerText = 'Camera not accessible. Please check permissions.';
+    });
+
 // Function to update the message display with different alert types
 function updateMessage(text, type = 'info') {
     message.innerText = text;
@@ -55,8 +66,8 @@ function detectFace() {
     const context = canvas.getContext('2d');
 
     // Handle different aspect ratios, especially for mobile
-    const videoWidth = video.naturalWidth;
-    const videoHeight = video.naturalHeight;
+    const videoWidth = video.videoWidth;
+    const videoHeight = video.videoHeight;
     const canvasAspectRatio = canvas.width / canvas.height;
     const videoAspectRatio = videoWidth / videoHeight;
 
