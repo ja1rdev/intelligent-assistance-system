@@ -20,14 +20,14 @@ The Intelligent Assistance System is a sophisticated AI-powered platform designe
 - **Frontend**: Django, HTML, CSS
 - **Backend**: Python, JS
 - **AI/ML**: Face recognition
-- **Database**: SQLite
-- **Infrastructure**: Docker, Kubernetes
+- **Database**: PostgreSQL
+- **Infrastructure**: Docker
 
 ## 📦 Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/jairdevl/intelligent-assistance-system.git
+git clone https://github.com/ja1rdev/intelligent-assistance-system.git
 
 # Navigate to the project directory
 cd intelligent-assistance-system
@@ -35,8 +35,14 @@ cd intelligent-assistance-system
 # Install dependencies
 pip install -r requirements.txt
 
+# Migrations
+python manage.py makemigrations
+
+# Apply migrations
+python manage.py migrate
+
 # Start the development server
-python manage.py runservers
+python manage.py runserver
 ```
 
 ## 🚀 Usage

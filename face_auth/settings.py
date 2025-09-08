@@ -33,7 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']  # or ['msgstr-operate-provider-set.trycloudflare.com']
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://msgstr-operate-provider-set.trycloudflare.com",
+    "https://announcements-stephen-aw-background.trycloudflare.com"
 ]
 
 # Application definition
