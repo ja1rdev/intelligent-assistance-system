@@ -1,1 +1,1 @@
-web: gunicorn face_auth.wsgi
+python manage.py collectstatic && gunicorn face_auth.wsgi
