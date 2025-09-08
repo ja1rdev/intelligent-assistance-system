@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure--l(x=_rsgm&d=-xf)*qp1+dv-@4b19&$ibg)7%hn=&g^832&h=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']  # or ['msgstr-operate-provider-set.trycloudflare.com']
+ALLOWED_HOSTS = ['localhost','web-production-6471c.up.railway.app'] 
 
 CSRF_TRUSTED_ORIGINS = [
     "https://announcements-stephen-aw-background.trycloudflare.com"
