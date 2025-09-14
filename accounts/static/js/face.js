@@ -14,17 +14,6 @@ let recognizedUsername = null;
 let lastDetectionAttempt = 0;
 const DETECTION_INTERVAL = 3000;
 
-// Access the camera and start the video stream
-navigator.mediaDevices.getUserMedia({ video: true })
-    .then(stream => {
-        video.srcObject = stream;
-        message.innerText = 'Camera enabled successfully.';
-    })
-    .catch(error => {
-        console.error('Error accessing camera:', error);
-        message.innerText = 'Camera not accessible. Please check permissions.';
-    });
-
 // Function to update the message display with different alert types
 function updateMessage(text, type = 'info') {
     message.innerText = text;
@@ -42,6 +31,16 @@ function updateMessage(text, type = 'info') {
     }
     message.style.display = 'block';
 }
+
+// Access the camera and start the video stream
+navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => {
+        video.srcObject = stream;
+        updateMessage('Camera enabled successfully.', 'success');
+    })
+    .catch(error => {
+        updateMessage('Camera not accessible. Please check permissions.', 'error');
+    });
 
 // Start periodic face detection using the video stream 
 function startFaceDetection() {
